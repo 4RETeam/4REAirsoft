@@ -5,10 +5,13 @@ import { UsersModule } from './users/users.module';
 import { ProfilesModule } from './profiles/profiles.module';
 import { ProductsModule } from './products/products.module';
 import { CategoriesModule } from './categories/categories.module';
+import { MongooseModule } from '@nestjs/mongoose';
+import { environment } from './environments/environment';
+import { CategoriesController } from './categories/categories.controller'
 
 @Module({
-  imports: [UsersModule, ProfilesModule, ProductsModule, CategoriesModule],
-  controllers: [AppController],
+  imports: [UsersModule, ProfilesModule, ProductsModule, CategoriesModule, MongooseModule.forRoot(environment.mongodb)],
+  controllers: [AppController, CategoriesController],
   providers: [AppService],
 })
 export class AppModule {}
