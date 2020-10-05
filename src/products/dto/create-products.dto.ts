@@ -4,4 +4,3 @@ export interface Products {
     breed: string;
     id: string;
 }
-

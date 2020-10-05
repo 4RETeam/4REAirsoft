@@ -11,7 +11,7 @@ export class Category {
     name: string;
 
     @Prop()
-    age: number;
+    quantity: number;
 
     @Prop()
     breed: string;
