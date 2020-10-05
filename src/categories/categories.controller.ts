@@ -3,8 +3,8 @@ import { Controller, Get, Post, Delete } from '@nestjs/common';
 @Controller('categories')
 export class CategoriesController {
     @Post()
-    create(): string {
-        return 'This action adds a new categories'
+    create(name?: string): string {
+        return `This action adds a new categories with name ${name}`
     }
 
     @Get()
@@ -13,8 +13,8 @@ export class CategoriesController {
     }
 
     @Delete()
-    remove(): string {
-        return 'This action removes categories'
+    remove(id?: string, name?: string): string {
+        return `This action removes category ${name} with id ${id}`
     }
 }
    
