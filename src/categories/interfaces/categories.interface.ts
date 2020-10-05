@@ -1,4 +1,4 @@
-export interface Categories {
+export interface Categorie {
     name: string;
     quantity: number;
     breed: string;

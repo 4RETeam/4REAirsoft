@@ -7,11 +7,10 @@ import { ProductsModule } from './products/products.module';
 import { CategoriesModule } from './categories/categories.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { environment } from './environments/environment';
-import { CategoriesController } from './categories/categories.controller'
 
 @Module({
   imports: [UsersModule, ProfilesModule, ProductsModule, CategoriesModule, MongooseModule.forRoot(environment.mongodb)],
-  controllers: [AppController, CategoriesController],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
