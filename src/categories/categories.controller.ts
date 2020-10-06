@@ -16,9 +16,10 @@ export class CategoriesController {
         return this.categoriesService.FindAll();
     }
 
-    @Delete()
-    remove(id?: string, name?: string): string {
-        return `This action removes category ${name} with id ${id}`
-    }
+    // @Delete(':name')
+    // remove(@Param('name') name?: string): string {
+    //     this.categoriesService.remove(name)
+    //     return `This action removes categorie ${name}`
+    // }
 }
    

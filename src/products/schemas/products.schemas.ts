@@ -18,6 +18,12 @@ export class Product {
 
     @Prop()
     id: string;
+
+    @Prop()
+    img: { type: String, default: null};
+
+    @Prop()
+    imgId: { type: String, default: null };
     
 }
 

@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Categorie } from './interfaces/categories.interface';
 
-
 @Injectable()
 export class CategoriesService {
     private readonly categories: Categorie[] = [];
@@ -13,4 +12,9 @@ export class CategoriesService {
     FindAll(): Categorie[] {
         return this.categories;
     }
-}
+
+    // remove(name: string) {
+    //     this.categories(name)
+    // } 
+        
+    }
