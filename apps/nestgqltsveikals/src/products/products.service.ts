@@ -14,7 +14,6 @@ export class ProductsService {
   ) {}
 
   public async findProductsForParent(id: string): Promise<Product[] | null> {
-    console.log(Types.ObjectId(id));
     return this.productModel.find({ category: id });
   }
 

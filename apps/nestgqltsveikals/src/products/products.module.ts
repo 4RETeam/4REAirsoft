@@ -1,12 +1,16 @@
 import { forwardRef, Module } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
 import { MongooseModule } from '@nestjs/mongoose';
+import { AuthModule } from '../auth/auth.module';
 import { CategoriesModule } from '../categories/categories.module';
 import { CategoriesService } from '../categories/categories.service';
 import {
   Category,
   CategorySchema,
 } from '../categories/schemas/categories.schema';
+import { User, UserSchema } from '../users/schemas/user.schema';
+import { UsersModule } from '../users/users.module';
+import { UsersService } from '../users/users.service';
 // import { User, UserSchema } from '../users/schemas/user.schema';
 // import { UsersModule } from '../users/users.module';
 // import { UsersService } from '../users/users.service';
@@ -21,11 +25,13 @@ import { Product, ProductSchema } from './schemas/products.schema';
     MongooseModule.forFeature([
       { name: Category.name, schema: CategorySchema },
     ]),
-    // MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
+    MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
     // UsersModule,
+    AuthModule,
     forwardRef(() => CategoriesModule),
+    UsersModule,
   ],
   controllers: [ProductsController],
-  providers: [ProductsService, CategoriesService],
+  providers: [ProductsService, UsersService, CategoriesService],
 })
 export class ProductsModule {}

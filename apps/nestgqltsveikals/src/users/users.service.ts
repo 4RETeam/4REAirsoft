@@ -75,7 +75,7 @@ export class UsersService {
   }
 
   async findByMail(email: string): Promise<User> {
-    const user = this.userModel.findOne({ email });
+    const user = this.userModel.findOne({ email }, { password: 0 });
     return user;
   }
 }

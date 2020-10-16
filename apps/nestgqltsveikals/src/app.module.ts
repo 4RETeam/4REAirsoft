@@ -14,6 +14,7 @@ import {
 } from './categories/schemas/categories.schema';
 import { User, UserSchema } from './users/schemas/user.schema';
 import { AuthModule } from './auth/auth.module';
+import { PaypalModule } from './paypal/paypal.module';
 
 @Module({
   imports: [
@@ -21,15 +22,11 @@ import { AuthModule } from './auth/auth.module';
       Next({ dev: process.env.NODE_ENV !== 'production' }),
     ),
     MongooseModule.forRoot('mongodb://localhost:27017/pleasework'),
-    // MongooseModule.forFeature([{ name: Product.name, schema: ProductSchema }]),
-    // MongooseModule.forFeature([
-    //   { name: Category.name, schema: CategorySchema },
-    // ]),
-    // MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
     UsersModule,
     CategoriesModule,
     ProductsModule,
     AuthModule,
+    PaypalModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -15,12 +15,7 @@ export class CategoriesService {
     private readonly productsService: ProductsService, // private readonly usersService: UsersService,
   ) {}
 
-  // public async test(): Promise<User[]> {
-  //   return this.usersService.findAll();
-  // }
-
   public async findCategoryIdByName(name: string): Promise<string | null> {
-    // console.log('asdfasdfa');
     return (await this.categoryModel.findOne({ name })).id;
   }
 

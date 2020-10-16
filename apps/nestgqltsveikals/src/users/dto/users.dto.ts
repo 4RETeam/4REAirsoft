@@ -1,17 +1,24 @@
 export class CreateUserDto {
-  password!: string;
-  email!: string;
-  // roles: RoleEnum[] = [];
-  isEnabled?: boolean = true;
-}
+         password!: string;
+         email!: string;
+         role?: number;
+         // roles: RoleEnum[] = [];
+         isEnabled?: boolean = true;
+       }
 export class LoginUserDto {
-  password!: string;
-  email!: string;
-}
+         password!: string;
+         role?: number;
+         email!: string;
+       }
 export class ValidateUserDto {
-  password!: string;
-  email!: string;
-}
+         password!: string;
+         role?: number;
+         email!: string;
+       }
 export class ReturnUserDto {
-  email!: string;
-}
+         role?: number;
+         email!: string;
+       }
+
+export const UserRole = ['ADMIN', 'EDITOR', 'CHIEFEDITOR', 'USER'];
+export enum UserRoleEnum {'ADMIN', 'EDITOR', 'CHIEFEDITOR', 'USER'};
