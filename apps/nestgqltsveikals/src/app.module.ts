@@ -7,12 +7,6 @@ import { UsersModule } from './users/users.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { CategoriesModule } from './categories/categories.module';
 import { ProductsModule } from './products/products.module';
-import { Product, ProductSchema } from './products/schemas/products.schema';
-import {
-  Category,
-  CategorySchema,
-} from './categories/schemas/categories.schema';
-import { User, UserSchema } from './users/schemas/user.schema';
 import { AuthModule } from './auth/auth.module';
 import { PaypalModule } from './paypal/paypal.module';
 
