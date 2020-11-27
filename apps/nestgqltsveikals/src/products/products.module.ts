@@ -1,6 +1,7 @@
 import { forwardRef, Module } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
 import { MongooseModule } from '@nestjs/mongoose';
+import { MulterModule } from '@nestjs/platform-express';
 import { AuthModule } from '../auth/auth.module';
 import { CategoriesModule } from '../categories/categories.module';
 import { CategoriesService } from '../categories/categories.service';
@@ -21,6 +22,11 @@ import { Product, ProductSchema } from './schemas/products.schema';
 @Module({
   imports: [
     // CategoriesModule,
+    MulterModule.registerAsync({
+      useFactory: async () => ({
+        dest: __dirname+'/public/products',
+      }),
+    }),
     MongooseModule.forFeature([{ name: Product.name, schema: ProductSchema }]),
     MongooseModule.forFeature([
       { name: Category.name, schema: CategorySchema },

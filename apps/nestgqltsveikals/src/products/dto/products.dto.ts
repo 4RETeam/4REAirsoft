@@ -6,4 +6,5 @@ export class CreateProductDto {
   isSpecial!: boolean;
   category!: string;
   categoryName!: string;
+  imagePath!: string;
 }

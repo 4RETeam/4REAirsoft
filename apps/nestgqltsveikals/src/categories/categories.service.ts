@@ -24,9 +24,15 @@ export class CategoriesService {
     return this.productsService.findProductsForParent(id);
   }
 
+  public async findAll(): Promise<Category[] | null> {
+    // const id = (await this.findCategoryIdByName(name)).toString();
+    return await this.categoryModel.find();
+  }
+
   public async createCategory(
     createCategoryDto: CreateCategoryDto,
   ): Promise<Category> {
+    // console.log(createCategoryDto)
     const createdCategory = new this.categoryModel(createCategoryDto);
     return createdCategory.save();
   }

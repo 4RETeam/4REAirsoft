@@ -7,6 +7,9 @@ export type ProductDocument = Product & Document;
 export class Product {
   @Prop()
   name!: string;
+  
+  @Prop()
+  imagePath!: string;
 
   @Prop()
   description!: string;

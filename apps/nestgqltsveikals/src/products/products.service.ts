@@ -17,10 +17,25 @@ export class ProductsService {
     return this.productModel.find({ category: id });
   }
 
+  public async findSpecialOffers(): Promise<Product[] | null> {
+    return this.productModel.find({ isSpecial: true });
+  }
+
+  public async findNewProducts(): Promise<Product[] | null> {
+    const nowDate = new Date();
+    nowDate.setMonth(nowDate.getMonth() -1);
+    return this.productModel.find({createdDate:{$gte:nowDate}})
+  }
+
+  public async findNonSpecialOffers(): Promise<Product[] | null> {
+    return this.productModel.find({ isSpecial: false });
+  }
+
   public async createProduct(
     createProductDto: CreateProductDto,
   ): Promise<Product | null> {
     createProductDto.createdDate = new Date();
+    
     const categoryId = await this.categoryService.findCategoryIdByName(
       createProductDto.categoryName,
     );

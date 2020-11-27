@@ -54,13 +54,13 @@ export class PaypalService {
     const paypal = this.getConfig();
 
     paypal.payment.create(create_payment_json, (error, payment) => {
-      console.log(payment, error);
+      // console.log(payment, error);
       if (error) {
         throw error;
       } else {
         for (let i = 0; i < payment.links.length; i++) {
           if (payment.links[i].rel === 'approval_url') {
-            console.log(payment.links[i].href);
+            // console.log(payment.links[i].href);
             return payment.links[i].href;
           }
         }

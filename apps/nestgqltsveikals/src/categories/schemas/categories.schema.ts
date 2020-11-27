@@ -6,6 +6,9 @@ export type CategoryDocument = Category & Document;
 @Schema()
 export class Category {
   @Prop()
+  imagePath!: string;
+
+  @Prop()
   name!: string;
 
   @Prop()
