@@ -1,0 +1,339 @@
+@font-face {
+  font-family: 'Monsterrat';
+  src: url(../pages/assets/Monsterrat/Montserrat-Black.ttf) format('truetype');
+}
+
+.red-square {
+  width: 50px;
+  height: 50px;
+  background-color: #B23131;
+  position: absolute;
+}
+
+.RSleft {
+  left: 0;
+  bottom: -25px;
+}
+
+.RSright {
+  right: 0;
+}
+
+.main-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(../pages/assets/photo_2020-07-24_17-32-51.jpg);
+  width: 100%;
+  height: 95vh;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: inset 0px 180px 50px rgba(0, 0, 0, 0.55);
+  filter: drop-shadow(0px 5px 9px rgba(0, 0, 0, 0.35));
+  background-size: cover;
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+h1 {
+  color: #333333;
+}
+
+.carousel-block {
+  margin: 85vh 0 10vh 0;
+}
+
+.slick-track {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-head {
+  color: #f6f6f6;
+  font-family: 'Monsterrat';
+  font-size: 24px;
+}
+
+.main-heading {
+  color: #141414;
+
+  font-family: 'Monsterrat';
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 2rem;
+  &:after {
+      content: "";
+      left: calc(50% - 50px);
+      top: 3rem;
+      position: absolute;
+      width: 100px;
+      height: 3px;
+      background-color: #C4C4C4;
+      color: #C4C4C4;
+  }
+}
+
+.catalogue-item {
+  padding: 1rem;
+  height: 285px;
+  img {
+      width: 260px;
+      height: 260px;
+      transition: all .5s ease;
+  }
+   :hover {
+      img {
+          transform: scale(1.5);
+          transition: all .3s ease;
+      }
+      .textBG {
+          bottom: 0rem;
+          left: 0rem;
+          background-color: #B23131;
+          transition: all .3s ease;
+      }
+      .sales-square {
+          transition: all .3s ease;
+          top: 0rem;
+          right: 0rem;
+      }
+  }
+  .textBG {
+      transition: all .5s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 2rem;
+      font-family: 'Monsterrat';
+      font-weight: bold;
+      font-size: 18px;
+      background-color: #333333;
+      position: absolute;
+      bottom: .5rem;
+      left: .5rem;
+      width: 100%;
+      margin-bottom: 0;
+  }
+  .catalogue-BG {
+      .img-cont {
+          overflow: hidden;
+      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 260px;
+      width: 260px;
+      background-color: #D9D9D9;
+      position: relative;
+  }
+  .sales-square {
+      transition: all .3s ease;
+      position: absolute;
+      width: 3rem;
+      height: 3rem;
+      right: -0.5rem;
+      top: -0.5rem;
+      text-align: center;
+      background: #B23131;
+      span {
+          font-family: 'Poppins';
+          font-weight: bold;
+          position: absolute;
+          vertical-align: middle;
+          line-height: 3rem;
+          left: -0.5rem;
+      }
+  }
+}
+
+.service-cont {
+  background: linear-gradient(90deg, #4A4A4A 10.94%, #141414 69.87%);
+  background: url(../pages/assets/Service.jpg) center center;
+  background-size: cover;
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: inset 10px 10px 300px 200px rgba(20, 20, 20, 0.3);
+}
+
+.service-image {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.expansion-indicator{
+  max-width: 50px;
+}
+.adminThing{
+  min-height: 100vh;
+  background-color: #2C2C2C;
+  ul{
+    list-style: none;
+  }
+  li{
+    &:marker{
+      display: none;
+    }
+  }
+  footer{
+    position: absolute;
+    bottom: 0;
+  }
+}
+.sidebar{
+  height: 100%;
+  right: 0%;
+  position: fixed;
+  padding: 3em 2em;
+  top: 0;
+  transition-duration: 0.5s;
+  background-color: #fff;
+}
+.hidden{
+  right: -50%;
+}
+.logo{
+  min-width: 50px;
+  min-height: 50px;
+  // background-image: url(../pages/assets/airsofta_logo_new.png);
+  // content: url(../pages/assets/airsofta_logo_new.png);
+}
+
+.pafos-bg {
+  background: url(../pages/assets/FHD-4RE.png) center center;
+  background-size: cover;
+  height: 500px;
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+footer {
+  margin-top: 4rem;
+  background: linear-gradient(90deg, #151515 27.28%, #2C2C2C 97.4%);
+  h5 {
+      margin: 1rem 0;
+      text-align: center;
+      font-family: 'Monsterrat';
+      color: #f6f6f6;
+      text-transform: capitalize;
+      &:after {
+          content: "";
+          left: calc(50% - 50px);
+          top: 3rem;
+          position: absolute;
+          width: 100px;
+          height: 2px;
+          background-color: #999999;
+          color: #999999;
+      }
+  }
+}
+
+.container {
+  transition: all .5s;
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) and (min-width: 575.98px) {}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) and (min-width: 767.98px) {
+  #slider-conteiner {
+      height: 15rem !important;
+      img {
+          width: 12rem !important;
+          height: 12rem !important;
+          transition: all .5s;
+      }
+      .inner {
+          width: 12rem !important;
+          height: 12rem !important;
+          transition: all .5s;
+      }
+      .slide-text {
+          width: 12rem !important;
+          bottom: 1rem;
+      }
+      .slick-center {
+          width: 15rem !important;
+          height: 15rem !important;
+          img {
+              width: 15rem !important;
+              height: 15rem !important;
+              transition: all .5s;
+          }
+      }
+  }
+  .catalogue-item {
+      height: inherit;
+      .catalogue-BG {
+          width: 10.5rem;
+          height: 10.5rem;
+          transition: all .5s;
+      }
+      img {
+          width: 10.5rem;
+          height: 10.5rem;
+          transition: all .5s;
+      }
+  }
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) and (min-width: 991.98px) {
+  #slider-conteiner {
+      height: 17rem !important;
+      .slick-center {
+          width: 17rem !important;
+          height: 17rem !important;
+          img {
+              width: 17rem !important;
+              height: 17rem !important;
+              transition: all .5s;
+          }
+      }
+      img {
+          width: 15rem !important;
+          height: 15rem !important;
+          transition: all .5s;
+      }
+      .inner {
+          width: 15rem !important;
+          height: 15rem !important;
+          transition: all .5s;
+      }
+      .slide-text {
+          width: 15rem !important;
+          bottom: 2rem;
+      }
+  }
+  .catalogue-item {
+      height: inherit;
+      .catalogue-BG {
+          width: 14rem;
+          height: 14rem;
+          transition: all .5s;
+      }
+      img {
+          width: 14rem;
+          height: 14rem;
+          transition: all .5s;
+      }
+  }
+}

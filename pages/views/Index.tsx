@@ -7,20 +7,24 @@ import { MainSlider } from 'pages/components/home/MainSlider';
 import { SpecialOffers } from 'pages/components/home/SpecialOffers';
 import { Pafos } from 'pages/components/home/Pafos';
 import { Service } from 'pages/components/home/Service';
-import Login from 'pages/components/home/Login';
+import Navbar from "../components/Layout/Navbar";
+import navButtons from "../interfaces/NavButtons";
 
 // import '../../styles/global.scss';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const RegisterComponentWithCustomLoading = dynamic(
   () => import('../components/home/Register'),
   { loading: () => <p>Loading</p> },
 );
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const LoginComponentWithCustomLoading = dynamic(
   () => import('../components/home/Login'),
   { loading: () => <p>Loading</p> },
 );
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const LoginAndRegister = (props) => {
   return (
     <div className={`sidebar ${!props.loggedIn ? "hidden" : ""}`}>
@@ -28,15 +32,14 @@ const LoginAndRegister = (props) => {
       <LoginComponentWithCustomLoading/>
     </div>
   )
-}
+};
 
 const Index = (props: any) => {
   const [loaded, setLoaded] = useState(true);
   const [loggedIn, setLoggedIn] = useState(false);
-  let yes = false;
   useEffect(() => {
     if (props.categories[0] && props.newProducts[0]) setLoaded(true);
-    
+
     // if (loaded) console.log(props.newProducts);
     if (localStorage.getItem('access_token')) setLoggedIn(true);
   });
@@ -54,8 +57,8 @@ const Index = (props: any) => {
       <Navbar navButtons={navButtons} />
       <div className="container">
         <div className="main-bg">
-          <div className="red-square RSleft"></div>
-          <div className="red-square RSright"></div>
+          <div className="red-square RSleft"/>
+          <div className="red-square RSright"/>
         </div>
         <div className="carousel-block">
           <h1 className="text-center main-heading">New Arrivals</h1>
@@ -85,17 +88,11 @@ const Index = (props: any) => {
   );
 };
 
-// const isShowing = () => {
-//   let thing
-  
-// }
-
 Index.getInitialProps = (res: any) => {
   const { query } = res;
-  // console.log(res);
   return {
     ...query,
-    
+
   };
 };
 
