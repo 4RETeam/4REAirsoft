@@ -39,21 +39,11 @@ const Index = (props: any) => {
   const [loggedIn, setLoggedIn] = useState(false);
   useEffect(() => {
     if (props.categories[0] && props.newProducts[0]) setLoaded(true);
-
-    // if (loaded) console.log(props.newProducts);
     if (localStorage.getItem('access_token')) setLoggedIn(true);
   });
 
-  setInterval(() => {
-    if(typeof window !== 'undefined'){
-      if(document.getElementById('loaded')) setLoggedIn(true);
-      if(document.getElementById('notLoaded')) setLoggedIn(false);
-    }
-  },500)
-
   return (
     <Layout title="Home | Next.js + TypeScript Example">
-      {/* {yes ? (<div>yes </div>):(<div>no</div>)} */}
       <Navbar navButtons={navButtons} />
       <div className="container">
         <div className="main-bg">
