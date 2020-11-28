@@ -33,8 +33,8 @@ export class AppController {
     };
   }
 
-  @Get('catalogue/')
-  @Render('Index')
+  @Get('user/')
+  @Render('UserDashboard')
   public userDash() {
     // initial props
     return {

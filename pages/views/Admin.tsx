@@ -1,6 +1,7 @@
-import React, { Component, useEffect } from 'react';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React from 'react';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import AdminLayout from '../components/Layout/AdminLayout';
-import { useState } from 'react';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Card, CardBody, CardFooter, CardHeader, Col, Row } from '@paljs/ui';
 
