@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url(../pages/assets/Roboto/Roboto-Black.ttf) format('truetype') font-weight-bold, 
+    url(../pages/assets/Roboto/Roboto-Regular.ttf) format('truetype') font-weight-normal, 
+    url(../pages/assets/Roboto/Roboto-Light.ttf) format('truetype') font-weight-light;
+}
+
+@font-face {
+    font-family: 'Monsterrat';
+    src: url(../pages/assets/Monsterrat/Montserrat-Black.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(../pages/assets/Poppins/Poppins-Bold.ttf) format('truetype');
+}
+
+body {
+    background-color: #E5E5E5;
+}
+
+.navbar {
+    padding-top: 0;
+}
+
+.NavButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    transition: all .3s ease;
+     :hover {
+        &.Label {
+            color: #333 !important;
+            background-color: #f6f6f6;
+            border-left: solid 0.6rem #B33131;
+            transition: all .3s ease;
+        }
+    }
+    cursor: pointer;
+    .Icon {
+        font-size: 20px;
+        height: 100%;
+        width: 100%;
+        //font-size: 20px;
+    }
+    .Label {
+        border-left: solid 0rem rgba(20, 20, 20, 0);
+        ;
+        transition: all .3s ease;
+        color: #F6F6F6;
+        padding: 0.5rem;
+        text-transform: capitalize;
+    }
+}
+
+.BookGame {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    height: 50px;
+    color: #F6F6F6;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    background: #B33131;
+}
+
+.nav-item {
+    color: #F6F6F6;
+    // font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+}
+
+.search-bar {
+    display: inline;
+    margin: 0 0 0 0;
+    .form-control {
+        width: 100% !important;
+        margin: auto;
+    }
+}
+
+.navbar-airsoft-brand {
+    margin-bottom: -21px;
+    margin-right: -60px;
+    width: 150px;
+    height: 150px;
+}
+
+.bag {
+    .circle {
+        position: absolute;
+        top: 49px;
+        /* left: 4px; */
+        right: 114px;
+        .numberOfItems {
+            position: absolute;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 13px;
+            color: #FFFFFF;
+            top: 6px;
+            left: 4px;
+        }
+    }
+}
+
+p,
+span,
+h1 {
+    // font-family: 'Roboto';
+    color: #F6F6F6;
+}
