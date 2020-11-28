@@ -1,20 +1,10 @@
 import React, { Component, useEffect } from 'react';
 import AdminLayout from '../components/Layout/AdminLayout';
-import dynamic from 'next/dynamic';
-import { useRef, useState } from 'react';
-import { Catalogue } from 'pages/components/home/Catalogue';
-import { MainSlider } from 'pages/components/home/MainSlider';
-import { SpecialOffers } from 'pages/components/home/SpecialOffers';
-import { Pafos } from 'pages/components/home/Pafos';
-import { Service } from 'pages/components/home/Service';
+import { useState } from 'react';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Card, CardBody, CardFooter, CardHeader, Col, Row } from '@paljs/ui';
 
 const Admin = (props: any) => {
-  const [loaded, setLoaded] = useState(true);
-  const [loggedIn, setLoggedIn] = useState(false);
-
-  useEffect(() => {
-  });
 
   return (
     <AdminLayout title="Home | Next.js + TypeScript Example">

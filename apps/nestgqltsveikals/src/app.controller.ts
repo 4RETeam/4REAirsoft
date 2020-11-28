@@ -33,6 +33,15 @@ export class AppController {
     };
   }
 
+  @Get('catalogue/')
+  @Render('Index')
+  public userDash() {
+    // initial props
+    return {
+      title: 'Next with Nest',
+    };
+  }
+
   @Get('product/:id')
   @Render('Index')
   public product() {
@@ -52,12 +61,12 @@ export class AppController {
   }
   @Get('admin/products')
   @Render('AdminProducts')
-  public async adminproducts() {
-    let categories = await this.categoriesService.findAll();
-    let products = [];
-    await categories.forEach(async( element ) =>  {
+  public async adminProducts() {
+    const categories = await this.categoriesService.findAll();
+    const products = [];
+    categories.forEach(( element ) =>  {
       // console.log(element);
-      let productLine = await this.categoriesService.findAllChildProducts(element.name);
+      const productLine = this.categoriesService.findAllChildProducts(element.name);
       products.push(productLine);
     });
     // initial props
@@ -69,9 +78,9 @@ export class AppController {
   }
   @Get('admin/categories')
   @Render('AdminCategories')
-  public async admincategories() {
+  public async adminCategories() {
     // initial props
-    let categories = await this.categoriesService.findAll();
+    const categories = await this.categoriesService.findAll();
 
     return {
       title: 'Next with Nest',
