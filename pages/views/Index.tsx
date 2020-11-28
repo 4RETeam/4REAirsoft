@@ -25,26 +25,45 @@ const LoginComponentWithCustomLoading = dynamic(
 );
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const LoginAndRegister = (props) => {
+const LoginAndRegister = ({showAll, showReg, showLog}) => {
   return (
-    <div className={`sidebar ${!props.loggedIn ? "hidden" : ""}`}>
-      <RegisterComponentWithCustomLoading />
-      <LoginComponentWithCustomLoading/>
+    <div className={`sidebar ${showAll ? '' : 'hidden'}`}>
+        <div className={`${!showReg ? '' : 'hidden'}`}>
+            <RegisterComponentWithCustomLoading />
+        </div>
+        <div className={`${!showLog ? '' : 'hidden'}`}>
+            <LoginComponentWithCustomLoading/>
+        </div>
     </div>
   )
 };
 
 const Index = (props: any) => {
+  const [showSide, setShowSide] = React.useState(false);
+  const [showLogin, setShowLogin] = React.useState(false);
   const [loaded, setLoaded] = useState(true);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [showReg, setShowReg] = React.useState(false);
+  const toggleLogin = () => {
+      setShowLogin(o => o = !o);
+      setShowSide( showLogin === true || showReg === true);
+  };
+  const toggleReg = () => {
+      setShowReg(o => o = !o);
+      setShowSide( showLogin === false || showReg === false);
+  };
+  const hideAll = () => {
+    setShowLogin(true);
+    setShowReg(true);
+    setShowSide(false);
+  };
   useEffect(() => {
     if (props.categories[0] && props.newProducts[0]) setLoaded(true);
-    if (localStorage.getItem('access_token')) setLoggedIn(true);
+    setShowSide( showLogin === false || showReg === false);
   });
 
   return (
     <Layout title="Home | Next.js + TypeScript Example">
-      <Navbar navButtons={navButtons} />
+      <Navbar onToggleReg={toggleReg} onToggleLog={toggleLogin} navButtons={navButtons} />
       <div className="container">
         <div className="main-bg">
           <div className="red-square RSleft"/>
@@ -73,7 +92,8 @@ const Index = (props: any) => {
         <h1 className="text-center main-heading">CONTACT US</h1>
         {/* <Contact /> */}
       </div>
-      <LoginAndRegister loggedIn={loggedIn} />
+        {showSide ? <div onClick={hideAll} className="shade"/> : ''}
+        <LoginAndRegister showAll={showSide} showLog={showLogin} showReg={showReg}/>
     </Layout>
   );
 };

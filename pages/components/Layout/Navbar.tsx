@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import NavButton from './NavButton';
+import Layout from "./Layout";
 
 
 
 
-const Navbar = (props: any) => (
-  
+const Navbar = ({onToggleReg: onToggleReg, onToggleLog: onToggleLog, navButtons}) => (
+
   <div className='container'>
   <div className='row no-gutters'>
-
     <div className='col-sm-1  	d-none d-lg-block '>
       <a className="navbar-airsoft-brand " href="/">
         <img src="/airsofta_logo_new.png" className='mr-5 logo' alt="my image" />
@@ -25,7 +25,7 @@ const Navbar = (props: any) => (
 
           <ul className="navbar-nav mt-3">
             {
-              props.navButtons.map(
+              navButtons.map(
                 (button: any) => (
                   <NavButton
                     key={button.path}
@@ -44,11 +44,11 @@ const Navbar = (props: any) => (
     </div>
     <div className='col-sm-3 pt-1'>
       <div className="mt-4 pt-4">
-            
+
         <span className='pt-2 mx-3'>
-          <button onClick={props.login}>Login</button>/<button >Register</button>
+          <button onClick={onToggleLog}>Login</button>/<button onClick={onToggleReg}>Register</button>
         </span>
-        
+
         <Link href='/cart'>
           <span className='bag'>
             <span className='circle text-center'>
